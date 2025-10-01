@@ -1,0 +1,39 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+:root {
+  /* New, slightly darker color palette */
+  --deep-space-black: #0d1117; /* Background */
+  --accent-blue: #58a6ff; /* Accent Color */
+  --text-light: #e0e0e0; /* Main Text */
+  --text-heading: #ffffff; /* Heading Text */
+  scroll-behavior: smooth;
+}
+
+/* Map CSS variables to Tailwind utility classes */
+.bg-deep-space-black {
+  background-color: var(--deep-space-black);
+}
+
+.hover\:text-accent-blue:hover {
+  color: var(--accent-blue);
+}
+
+.after\:bg-accent-blue::after {
+  background-color: var(--accent-blue);
+}
+
+/* Added background for mobile link hover */
+.hover\:bg-accent-blue\/20:hover {
+  background-color: rgba(
+    88,
+    166,
+    255,
+    0.2
+  ); /* 20% opacity of the accent blue */
+}
+::-webkit-scrollbar {
+  scroll-snap-type: none;
+}

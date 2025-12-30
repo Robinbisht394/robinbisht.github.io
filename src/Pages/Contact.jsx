@@ -1,6 +1,6 @@
 // ContactPage.jsx
 import { useState } from "react";
-import { FaPaperPlane, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import ContactForm from "../Components/ContactForm";
 const ContactPage = () => {
   // State to handle form inputs
@@ -25,7 +25,6 @@ const ContactPage = () => {
     setFormData({ name: "", email: "", mobile: "", message: "" }); // Reset form
   };
 
-  // Styling for input fields
   const inputStyle =
     "w-full p-3 bg-deep-space-black text-white border border-gray-700 rounded-lg " +
     "focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all duration-300 font-inter";
@@ -46,14 +45,15 @@ const ContactPage = () => {
           {/* Alternative Contact Links */}
           <div className="flex justify-center space-x-8 text-2xl">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:robinbisht394@gmail.com"
               className="text-gray-400 hover:text-accent-blue transition-colors flex items-center space-x-2"
             >
               <FaEnvelope />{" "}
               <span className="text-lg font-inter hidden sm:inline">Email</span>
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://linkedin.com/in/robin-singh-55b3582b6
+              "
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-accent-blue transition-colors flex items-center space-x-2"
@@ -64,7 +64,7 @@ const ContactPage = () => {
               </span>
             </a>
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/robinbisht394"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-accent-blue transition-colors flex items-center space-x-2"

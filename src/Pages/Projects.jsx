@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import ProjectCard from "../Components/ProjectCard";
-
+import avalonCart from "../assets/avalonCart.png";
+import chat from "../assets/chat.png";
+import Redbelly from "../assets/Redbelly.png";
+import todo from "../assets/todo-list.png";
 const projectData = [
   {
     id: 1,
@@ -9,8 +12,8 @@ const projectData = [
     tags: ["React", "tailwind", "Frontend"],
     description:
       "A Simple E-commerce frontend app with product listing and personal cart feature and filter for products",
-    imageUrl: "placeholder-ecommerce.jpg",
-    demoLink: "#",
+    imageUrl: avalonCart,
+    demoLink: "https://avaloncart.onrender.com",
     repoLink: "https://github.com/Robinbisht394/AvalonCart.git",
   },
   {
@@ -19,34 +22,34 @@ const projectData = [
     tags: ["React", "Frontend", "Full stack "],
     description:
       "A real-time messaging application built using express and react and socket.io for instant data synchronization.",
-    imageUrl: "placeholder-chat.jpg",
-    demoLink: "#",
+    imageUrl: chat,
+    demoLink: "https://chatly-zos8.onrender.com",
     repoLink: "https://github.com/Robinbisht394/Chat-App-chatly-.git",
   },
   {
     id: 3,
     title: "redBelly",
-    tags: ["React", "Frontend", ""],
+    tags: [],
     description:
       "A Zomato-like app which list restaurants and menus and manage the product cart efficiently",
-    imageUrl: "placeholder-chat.jpg",
-    demoLink: "#",
+    imageUrl: Redbelly,
+    demoLink: "https://redbelly.onrender.com",
     repoLink: "https://github.com/Robinbisht394/RedBelly.git",
   },
   {
     id: 4,
     title: "MeetNest",
-    tags: ["React", "Frontend", "Full stack", "analytics", "charts"],
+    tags: [],
     description:
       "A Zomato-like app which list restaurants and menus and manage the product cart efficiently",
-    imageUrl: "placeholder-chat.jpg",
-    demoLink: "#",
+    imageUrl: "Meetnest",
+    demoLink: "",
     repoLink: "https://github.com/Robinbisht394/MeetNest.git",
   },
   {
     id: 5,
     title: "Restaurant_management_api",
-    tags: ["backend", "restaurant", "express", "server"],
+    tags: [],
     description:
       "A Zomato-like app which list restaurants and menus and manage the product cart efficiently",
     imageUrl: "placeholder-chat.jpg",
@@ -56,11 +59,11 @@ const projectData = [
   {
     id: 6,
     title: "To-do App",
-    tags: ["HTML", "CSS", "JS", "list"],
+    tags: [],
     description:
       "A simple to-do app built with pure Html Css and javascript, to help you to manage and achieve your daily task and goals",
-    imageUrl: "placeholder-chat.jpg",
-    demoLink: "#",
+    imageUrl: todo,
+    demoLink: "",
     repoLink: "https://github.com/Robinbisht394/todo.git",
   },
 ];

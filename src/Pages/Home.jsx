@@ -2,6 +2,7 @@
 import { FaArrowRight, FaReact, FaNodeJs, FaHtml5, FaJs } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SkillCard from "../Components/SkillCard";
+import profile from "../assets/profile.jpg";
 const Home = () => {
   return (
     <div className="bg-deep-space-black min-h-screen">
@@ -35,7 +36,9 @@ const Home = () => {
             {/* Placeholder for a cool profile photo */}
             <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-700 rounded-full border-4 border-accent-blue/50 border-blue-400 shadow-2xl overflow-hidden flex items-center justify-center">
               {/* In production, replace with an actual image, styled to fit the dark theme */}
-              <span className="text-white text-xl">Your Photo Here</span>
+              <span className="text-white text-xl">
+                <img src={profile} alt="dev profile" />
+              </span>
             </div>
           </div>
         </div>

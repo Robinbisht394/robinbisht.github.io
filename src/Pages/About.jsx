@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SkillSet from "../Components/SkillSet";
+import profile from "../assets/profile.jpg";
+import resume from "../assets/resume.pdf";
 const AboutPage = () => {
   return (
     <div className="bg-deep-space-black min-h-screen">
@@ -42,7 +44,11 @@ const AboutPage = () => {
             <div className="w-64 h-64 rounded-xl bg-gray-700 shadow-2xl shadow-accent-blue/30 overflow-hidden transform hover:scale-[1.05] transition-transform duration-500">
               {/* Placeholder for professional headshot */}
               <span className="flex items-center justify-center h-full text-white text-xl">
-                Your Photo
+                <img
+                  src={profile}
+                  alt="Engineer profile"
+                  className="size-full bg-cover bg-center"
+                />
               </span>
             </div>
           </div>
@@ -87,7 +93,7 @@ const AboutPage = () => {
           {/* Resume Download CTA */}
           <div className="text-center mt-12">
             <Link
-              to="/path-to-your-resume.pdf"
+              to={resume}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-3 bg-accent-blue text-white font-bold py-3 px-8 rounded-lg shadow-xl shadow-accent-blue/30 hover:shadow-2xl hover:bg-opacity-90 transition-all duration-300 transform hover:scale-[1.02]"
@@ -104,7 +110,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Future Focus Card */}
           <div className="p-6 bg-secondary-background rounded-xl border border-transparent hover:border-accent-blue transition-all duration-300">
-            <FaBrain className="text-3xl text-accent-blue mb-4" />
+            <FaBrain className="text-3xl text-blue-500 mb-4" />
             <h4 className="text-2xl font-poppins text-white mb-3">
               Future Focus & Learning
             </h4>
@@ -113,10 +119,9 @@ const AboutPage = () => {
               <li>Exploring the workings of widely used application.</li>
             </ul>
           </div>
-
           {/* Interests Card (Relevant to Dev Traits) */}
           <div className="p-6 bg-secondary-background rounded-xl border border-transparent hover:border-accent-blue transition-all duration-300">
-            <FaPuzzlePiece className="text-3xl text-gray-500 mb-4" />
+            <FaPuzzlePiece className="text-3xl text-blue-500 mb-4" />
             <h4 className="text-2xl font-poppins text-white mb-3">
               Relevant Interests
             </h4>

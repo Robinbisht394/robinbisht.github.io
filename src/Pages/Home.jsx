@@ -1,9 +1,25 @@
 // HomePage.jsx
-import { FaArrowRight, FaReact, FaNodeJs, FaHtml5, FaJs } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import {
+  FaArrowRight,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaJs,
+  FaCss3,
+} from "react-icons/fa";
+import { SiMysql, SiMongodb, SiExpress } from "react-icons/si";
+import { Link, Navigate } from "react-router-dom";
 import SkillCard from "../Components/SkillCard";
 import profile from "../assets/profile.jpg";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const navigate = useNavigate();
+  const downloadResume = () => {
+    navigate("/about");
+  };
+
+
   return (
     <div className="bg-deep-space-black min-h-screen">
       {/* 1. Hero Section */}
@@ -37,7 +53,11 @@ const Home = () => {
             <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-700 rounded-full border-4 border-accent-blue/50 border-blue-400 shadow-2xl overflow-hidden flex items-center justify-center">
               {/* In production, replace with an actual image, styled to fit the dark theme */}
               <span className="text-white text-xl">
-                <img src={profile} alt="dev profile" />
+                <img
+                  src={profile}
+                  alt="dev profile"
+                  className="bg-center bg-cover size-full"
+                />
               </span>
             </div>
           </div>
@@ -50,15 +70,15 @@ const Home = () => {
           <h3 className="text-4xl font-poppins text-white text-center mb-16 font-bold">
             My Tech Stack
           </h3>
-          <div className=" overflow-x-scroll flex justify-evenly items-center  gap-10 w-[100%] h-[12vh] pt-2 rounded-md">
+          <div className="overflow-x-scroll flex justify-between items-center gap-3 w-[100%] h-[12vh] pt-5 rounded-sm border-4 border-white">
             <SkillCard Icon={FaHtml5} name="HTML5" />
-            <SkillCard Icon={FaHtml5} name="CSS3" />
+            <SkillCard Icon={FaCss3} name="CSS3" />
             <SkillCard Icon={FaJs} name="Javascript" />
             <SkillCard Icon={FaReact} name="React" />
             <SkillCard Icon={FaNodeJs} name="Node.js" />
-            <SkillCard Icon={FaArrowRight} name="Express.js" />{" "}
-            <SkillCard Icon={FaArrowRight} name="SQL" />{" "}
-            <SkillCard Icon={FaArrowRight} name="MongoDB" />{" "}
+            <SkillCard Icon={SiExpress} name="Express.js" />{" "}
+            <SkillCard Icon={SiMysql} name="SQL" />{" "}
+            <SkillCard Icon={SiMongodb} name="MongoDB" />{" "}
           </div>
         </div>
       </section>
@@ -70,15 +90,20 @@ const Home = () => {
             Featured Projects
           </h3>
           {/* ... Project Cards Component will go here ... */}
-          <div className=" flex justify-between items-center text-center mt-12">
-            <Link
-              to="/projects"
-              className="inline-flex items-center space-x-2 bg-gray-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-600 transition-colors"
+          <div className=" flex justify-between items-center flex-col sm:flex-row md:flex-row lg:flex-row text-center mt-12">
+            <button className="">
+              <Link
+                to="/projects"
+                className="inline-flex items-center space-x-2 bg-gray-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-600 transition-colors"
+              >
+                <span>View All Projects</span>
+                <FaArrowRight />
+              </Link>
+            </button>
+            <button
+              onClick={downloadResume}
+              className=" w-[220px] text-center bg-gray-700 text-white font-bold py-3 rounded-lg hover:bg-gray-600 px-6 inline-flex items-center mt-9 sm:mt-0 md:mt-0 lg:mt-0"
             >
-              <span>View All Projects</span>
-              <FaArrowRight />
-            </Link>
-            <button className="bg-gray-700 text-white font-bold py-3 rounded-lg hover:bg-gray-600 px-6">
               Download CV
             </button>
           </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom"; // Changed from 'Link' to 'NavLink'
+import { NavLink } from "react-router-dom"; 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+ 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },

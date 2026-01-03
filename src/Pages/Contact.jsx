@@ -83,7 +83,7 @@ const ContactPage = () => {
             formData={formData}
             handleChange={handleChange}
             inputStyle={inputStyle}
-            handleSubmit={handleSubmit}
+            setFormData={setFormData}
           />
         </div>
       </div>

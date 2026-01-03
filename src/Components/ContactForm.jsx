@@ -1,101 +1,104 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaPaperPlane } from "react-icons/fa";
-const ContactForm = ({ formData, handleChange, inputStyle, handleSubmit }) => {
+import emailjs from "@emailjs/browser";
+
+const ContactForm = ({ formData, handleChange, inputStyle, setFormData }) => {
+  const formRef = useRef();
+
+  const publicKey = "2gBzCQGnU6yrTS3TF";
+  const serviceKey = "service_z0g2t53";
+  const templateKey = "template_0lafyx3";
+
+  const sendForm = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(serviceKey, templateKey, formRef.current, publicKey).then(
+      () => {
+        alert("Message sent successfully ✅");
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          message: "",
+        });
+      },
+      (error) => {
+        console.error("EmailJS Error:", error);
+        alert("Failed to send message ❌");
+      }
+    );
+  };
+
   return (
-    <>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name Input */}
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={inputStyle}
-            placeholder="Your Name"
-            required
-          />
-        </div>
+    <form ref={formRef} onSubmit={sendForm} className="space-y-6">
+      {/* Name */}
+      <div>
+        <label className="block text-sm font-medium text-white mb-2">
+          Name
+        </label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className={inputStyle}
+          required
+        />
+      </div>
 
-        {/* Email Input */}
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={inputStyle}
-            placeholder="name@example.com"
-            required
-          />
-        </div>
+      {/* Email */}
+      <div>
+        <label className="block text-sm font-medium text-white mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className={inputStyle}
+          required
+        />
+      </div>
 
-        {/* Mobile Number Input */}
-        <div>
-          <label
-            htmlFor="mobile"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Mobile Number (Optional)
-          </label>
-          <input
-            type="tel"
-            id="mobile"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            className={inputStyle}
-            placeholder="(+91) 123-XXXX"
-          />
-        </div>
+      {/* Mobile */}
+      <div>
+        <label className="block text-sm font-medium text-white mb-2">
+          Mobile (Optional)
+        </label>
+        <input
+          type="tel"
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleChange}
+          className={inputStyle}
+        />
+      </div>
 
-        {/* Message Textarea */}
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            className={inputStyle}
-            placeholder="Tell me about your project or opportunity..."
-            required
-          ></textarea>
-        </div>
+      {/* Message */}
+      <div>
+        <label className="block text-sm font-medium text-white mb-2">
+          Message
+        </label>
+        <textarea
+          name="message"
+          rows="5"
+          value={formData.message}
+          onChange={handleChange}
+          className={inputStyle}
+          required
+        />
+      </div>
 
-        {/* Send Button */}
-        <div className="pt-4">
-          <button
-            type="submit"
-            className="w-full inline-flex items-center justify-center space-x-2 bg-blue-500 text-white font-bold py-3 px-8 rounded-lg shadow-xl shadow-blue/30 
-            hover:shadow-2xl hover:bg-opacity-90 transition-all duration-300 transform hover:scale-[1.01]"
-          >
-            <FaPaperPlane />
-            <span>Send Message</span>
-          </button>
-        </div>
-      </form>
-    </>
+      {/* Button */}
+      <button
+        type="submit"
+        className="w-full flex items-center justify-center gap-2 bg-blue-500 text-white font-bold py-3 rounded-lg"
+      >
+        <FaPaperPlane />
+        Send Message
+      </button>
+    </form>
   );
 };
 

@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import SkillSet from "../Components/SkillSet";
 import profile from "../assets/profile.jpg";
-import resume from "../assets/resume.pdf";
+import resume from "../../public/resume.pdf";
 const AboutPage = () => {
   return (
     <div className="bg-deep-space-black min-h-screen">
@@ -92,15 +92,16 @@ const AboutPage = () => {
 
           {/* Resume Download CTA */}
           <div className="text-center mt-12">
-            <Link
-              to={resume}
+            <a
+              href={resume}
+              download="robin_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-3 bg-accent-blue text-white font-bold py-3 px-8 rounded-lg shadow-xl shadow-accent-blue/30 hover:shadow-2xl hover:bg-opacity-90 transition-all duration-300 transform hover:scale-[1.02]"
             >
               <FaDownload />
               <span>Download My Full Resume</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

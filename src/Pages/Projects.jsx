@@ -5,6 +5,8 @@ import avalonCart from "../assets/avalonCart.png";
 import chat from "../assets/chat.png";
 import Redbelly from "../assets/Redbelly.png";
 import todo from "../assets/todo-list.png";
+import meetnest from "../../public/meetnest.jpg";
+import restaurantapi from "../../public/restaurantapi.jpg";
 const projectData = [
   {
     id: 1,
@@ -41,18 +43,18 @@ const projectData = [
     title: "MeetNest",
     tags: [],
     description:
-      "A Zomato-like app which list restaurants and menus and manage the product cart efficiently",
-    imageUrl: "Meetnest",
-    demoLink: "",
+      "meetnest is a full stack event management application where a user can do both event participation and event posting with secure user data and particpants management and anlaytics",
+    imageUrl: meetnest,
+    demoLink: "https://meetnest-6udk.onrender.com",
     repoLink: "https://github.com/Robinbisht394/MeetNest.git",
   },
   {
     id: 5,
     title: "Restaurant_management_api",
     tags: [],
-    description:
-      "A Zomato-like app which list restaurants and menus and manage the product cart efficiently",
-    imageUrl: "placeholder-chat.jpg",
+    description: `A robust Restaurant Management API that efficiently handles customers, menus and orders. It prvides secure customer data storage,fast order processsing,
+     and flexible menu management, making it ideal for scalability and integration with restaurant workflows..`,
+    imageUrl: restaurantapi,
     demoLink: "#",
     repoLink: "https://github.com/Robinbisht394/Restaurant_Management_API.git",
   },

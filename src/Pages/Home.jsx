@@ -12,13 +12,14 @@ import { Link, Navigate } from "react-router-dom";
 import SkillCard from "../Components/SkillCard";
 import profile from "../assets/profile.jpg";
 import { useNavigate } from "react-router-dom";
-
+import TechMarquee from "../Components/TechMarque";
+// import SocialSidebar from "../Components/SocialSidebar";
+import SocialLinksWidget from "../Components/SocialMedia";
 const Home = () => {
   const navigate = useNavigate();
   const downloadResume = () => {
     navigate("/about");
   };
-
 
   return (
     <div className="bg-deep-space-black min-h-screen">
@@ -63,9 +64,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      <SocialLinksWidget />
       {/* 2. Skills & Expertise Section */}
-      <section className="py-20 bg-secondary-background">
+      {/* <section className="py-20 bg-secondary-background">
         <div className="container mx-auto px-6">
           <h3 className="text-4xl font-poppins text-white text-center mb-16 font-bold">
             My Tech Stack
@@ -81,7 +82,8 @@ const Home = () => {
             <SkillCard Icon={SiMongodb} name="MongoDB" />{" "}
           </div>
         </div>
-      </section>
+      </section> */}
+      <TechMarquee />
 
       {/* 3. Featured Projects Snippet - Placeholder for brevity */}
       <section className="py-20 bg-deep-space-black">
